@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="https://vai62050.github.io/flora-shop" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back
+        </a>
+        <div class="cart-container">
+            <button class="cart-button" id="cartBtn">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-content">
+            <h2>Shopping Cart</h2>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₹0.00</span>
+            </div>
+            <div class="cart-buttons">
+                <button class="close-cart" id="closeCart">Close</button>
+                <button class="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="product-container">
+        <!-- Product Image Section -->
+        <section class="product-image-section">
+            <div class="main-image">
+                <img src="./snakeplant1.jpg" alt="Product Image" id="mainImage">
+            </div>
+            <div class="variation-buttons">
+                <button class="variation-btn active" data-img="./snakeplant1.jpg">
+                    <img src="./snakeplant1.jpg" alt="Snake Plant">
+                </button>
+                <button class="variation-btn" data-img="./snakeplant2.jpg">
+                    <img src="./snakeplant2.jpg" alt="Snake Plant">
+                </button>
+                <button class="variation-btn" data-img="./snakeplant3.jpg">
+                    <img src="./snakeplant3.jpg" alt="Snake Plant">
+                </button>
+            </div>
+        </section>
+
+        <!-- Product Info Section -->
+        <section class="product-info">
+            <h1 class="product-name">Snake Plant </h1>
+            <div class="rating">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-value">0</span>
+            </div>
+            <div class="price">₹550</div>
+            <div class="product-actions">
+                <div class="quantity-controls">
+                    <button class="qty-btn" id="decreaseQty">-</button>
+                    <input type="number" value="1" min="1" id="quantity">
+                    <button class="qty-btn" id="increaseQty">+</button>
+                </div>
+                <button class="add-to-cart-btn" id="addToCart">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </section>
+
+        <!-- Product Description -->
+        <section class="product-description">
+            <h2>About This Plant</h2>
+            <div class="description-content">
+                <p class="main-desc">The Snake Plant, also known as Sansevieria, is a resilient and stylish addition to any home or office. Known for its upright, sword-like leaves, it features bold green foliage with striking yellow edges. This low-maintenance plant thrives in a variety of lighting conditions, from bright to low light, and can tolerate neglect in terms of watering, making it perfect for both beginners and busy plant owners. It’s also a natural air purifier, improving indoor air quality by removing toxins. With its sleek, modern appearance, the Snake Plant is an ideal choice for enhancing your space with minimal effort.</p>
+                
+                <div class="key-features">
+                    <div class="feature">
+                        <i class="fas fa-leaf"></i>
+                        <span>Low maintenance - Perfect for busy lifestyles</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-wind"></i>
+                        <span>Natural air purifier - Enhances air quality</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-paw"></i>
+                        <span>Pet-friendly - Safe for your furry friends</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-gift"></i>
+                        <span>Includes designer pot - Ready to display</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Suggested Products -->
+        <section class="suggested-products">
+            <h2>You May Also Like</h2>
+            <div class="suggestions-container">
+                <!-- Suggestion items will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+    <div class="container">
+        <!-- Average Rating Section -->
+        <section class="rating-summary">
+            <div class="average-rating">
+                <h2>Customer Reviews</h2>
+                <div class="rating-stats">
+                    <div class="rating-number">
+                        <span id="averageRating">0.0</span>
+                        <span class="total">/5</span>
+                    </div>
+                    <div class="rating-stars" id="averageStars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="rating-count">
+                        Based on <span id="totalReviews">0</span> reviews
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Review Form Section -->
+        <section class="review-form-section">
+            <h3>Write a Review</h3>
+            <form id="reviewForm" class="review-form">
+                <div class="rating-input">
+                    <label>Your Rating</label>
+                    <div class="star-rating" id="ratingInput">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="reviewText">Your Review</label>
+                    <textarea id="reviewText" rows="4" placeholder="Share your experience with this product..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="reviewImages">Add Photos</label>
+                    <div class="image-upload">
+                        <input type="file" id="reviewImages" accept="image/*" multiple class="file-input">
+                        <div class="upload-placeholder">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Drop images here or click to upload</span>
+                        </div>
+                    </div>
+                    <div id="imagePreview" class="image-preview"></div>
+                </div>
+
+                <button type="submit" class="submit-review">Submit Review</button>
+            </form>
+        </section>
+
+        <!-- Reviews Filter Section -->
+        <section class="reviews-filter">
+            <div class="filter-options">
+                <select id="sortReviews">
+                    <option value="newest">Most Recent</option>
+                    <option value="highest">Highest Rating</option>
+                    <option value="lowest">Lowest Rating</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Reviews Display Section -->
+        <section class="reviews-section">
+            <div id="reviewsList" class="reviews-list">
+                <!-- Reviews will be dynamically added here -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Review Template (Hidden) -->
+    <template id="reviewTemplate">
+        <div class="review-item">
+            <div class="review-header">
+                <div class="review-rating">
+                    <div class="stars"></div>
+                    <span class="review-date"></span>
+                </div>
+            </div>
+            <div class="review-content">
+                <p class="review-text"></p>
+                <div class="review-images"></div>
+            </div>
+        </div>
+    </template>
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="copyright">
+            <h1 class="font-weight size">©2024 - Flora Hub</h1>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
